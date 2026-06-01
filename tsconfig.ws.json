@@ -6,6 +6,7 @@
     { "path": "packages/typespec-azure-core/tsconfig.build.json" },
     { "path": "packages/typespec-azure-resource-manager/tsconfig.build.json" },
     { "path": "packages/typespec-client-generator-core/tsconfig.build.json" },
+    { "path": "packages/typespec-azure-rest/tsconfig.build.json" },
     { "path": "packages/typespec-azure-rulesets/tsconfig.build.json" },
     { "path": "packages/azure-http-specs/tsconfig.build.json" },
     { "path": "packages/typespec-metadata/tsconfig.build.json" },

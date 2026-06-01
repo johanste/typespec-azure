@@ -1,0 +1,56 @@
+{
+  "name": "@azure-tools/typespec-azure-rest",
+  "version": "0.1.0",
+  "author": "Microsoft Corporation",
+  "description": "TypeSpec REST library providing simple, resource-oriented operation templates based on REST principles.",
+  "license": "MIT",
+  "homepage": "https://azure.github.io/typespec-azure",
+  "readme": "https://github.com/Azure/typespec-azure/blob/main/packages/typespec-azure-rest/README.md",
+  "scripts": {
+    "clean": "rimraf ./dist ./temp",
+    "build": "tsc -p tsconfig.build.json && npm run lint-typespec-library",
+    "watch": "tsc -p tsconfig.build.json --watch",
+    "lint-typespec-library": "tsp compile . --warn-as-error --import @typespec/library-linter --no-emit",
+    "test": "vitest run",
+    "test:watch": "vitest -w",
+    "test:ui": "vitest --ui",
+    "test:ci": "vitest run --coverage --reporter=junit --reporter=default",
+    "lint": "eslint . --max-warnings=0",
+    "lint:fix": "eslint . --fix"
+  },
+  "keywords": [
+    "Azure",
+    "REST",
+    "TypeSpec"
+  ],
+  "type": "module",
+  "main": "dist/src/index.js",
+  "tspMain": "lib/main.tsp",
+  "exports": {
+    ".": {
+      "typespec": "./lib/main.tsp",
+      "default": "./dist/src/index.js"
+    },
+    "./testing": {
+      "default": "./dist/src/testing/index.js"
+    }
+  },
+  "peerDependencies": {
+    "@typespec/compiler": "workspace:^",
+    "@typespec/http": "workspace:^",
+    "@typespec/rest": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "~25.0.2",
+    "@typespec/compiler": "workspace:^",
+    "@typespec/http": "workspace:^",
+    "@typespec/library-linter": "workspace:^",
+    "@typespec/rest": "workspace:^",
+    "@typespec/tspd": "workspace:^",
+    "@vitest/coverage-v8": "^4.0.15",
+    "@vitest/ui": "^4.0.15",
+    "c8": "^10.1.3",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.15"
+  }
+}
